@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>BipView – Política de Privacidade</title>
+  <title>BipView – Compliance e Proteção de Dados</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -12,6 +12,8 @@
       background-color: #020617;
       color: #e5e7eb;
       min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
 
     header {
@@ -41,49 +43,168 @@
     }
 
     main {
-      max-width: 900px;
+      max-width: 1000px;
       margin: 0 auto;
       padding: 2rem 1.5rem 3rem;
+      flex: 1;
     }
 
     h1 {
       font-size: 2rem;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.4rem;
       color: #22c55e;
     }
 
-    .updated {
-      font-size: 0.85rem;
-      color: #9ca3af;
+    .subtitle {
+      font-size: 0.95rem;
+      color: #cbd5f5;
       margin-bottom: 1.5rem;
     }
 
-    h2 {
-      font-size: 1.2rem;
-      margin-top: 1.8rem;
-      margin-bottom: 0.6rem;
-      color: #e5e7eb;
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.2rem;
+      margin-bottom: 2rem;
     }
 
-    p {
+    .card {
+      background: radial-gradient(circle at top, rgba(22, 163, 74, 0.28), rgba(15, 23, 42, 0.98));
+      border-radius: 0.9rem;
+      padding: 1.4rem 1.5rem 1.5rem;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+    }
+
+    .card h2 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .card ul {
+      margin-left: 1.1rem;
       font-size: 0.95rem;
-      line-height: 1.6;
-      margin-bottom: 0.75rem;
-      color: #cbd5f5;
+      color: #d1d5db;
     }
 
-    ul {
-      margin: 0.5rem 0 0.75rem 1.1rem;
-      font-size: 0.95rem;
-      color: #cbd5f5;
-    }
-
-    li {
+    .card li {
       margin-bottom: 0.35rem;
     }
 
-    strong {
+    .card-secondary {
+      background: radial-gradient(circle at top, rgba(59, 130, 246, 0.25), rgba(15, 23, 42, 0.98));
+    }
+
+    .delete-section {
+      margin-top: 0.5rem;
+      border-radius: 0.9rem;
+      padding: 1.6rem 1.5rem 1.8rem;
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid rgba(248, 113, 113, 0.5);
+    }
+
+    .delete-header {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 0.7rem;
+      color: #fecaca;
+    }
+
+    .delete-icon {
+      width: 20px;
+      height: 20px;
+      border-radius: 999px;
+      background: #ef4444;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #020617;
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .delete-section p {
+      font-size: 0.9rem;
       color: #e5e7eb;
+      margin-bottom: 1rem;
+    }
+
+    form {
+      margin-top: 0.5rem;
+      display: grid;
+      gap: 0.9rem;
+    }
+
+    label {
+      font-size: 0.9rem;
+      color: #e5e7eb;
+    }
+
+    input[type="email"] {
+      width: 100%;
+      padding: 0.7rem 0.75rem;
+      border-radius: 0.6rem;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      background-color: #020617;
+      color: #e5e7eb;
+      font-size: 0.95rem;
+    }
+
+    input[type="email"]::placeholder {
+      color: #6b7280;
+    }
+
+    .hint {
+      font-size: 0.75rem;
+      color: #9ca3af;
+      margin-top: -0.4rem;
+    }
+
+    .checkbox-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.55rem;
+      padding: 0.7rem 0.75rem;
+      border-radius: 0.6rem;
+      background: rgba(30, 41, 59, 0.9);
+      border: 1px solid rgba(248, 113, 113, 0.8);
+      font-size: 0.86rem;
+    }
+
+    .checkbox-row input[type="checkbox"] {
+      margin-top: 0.1rem;
+    }
+
+    .delete-warning {
+      font-size: 0.78rem;
+      color: #fecaca;
+      margin-top: -0.2rem;
+    }
+
+    button[type="submit"] {
+      margin-top: 0.6rem;
+      padding: 0.8rem 1.2rem;
+      border-radius: 999px;
+      border: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      cursor: pointer;
+      background: linear-gradient(120deg, #ef4444, #fb7185);
+      color: #020617;
+      box-shadow: 0 14px 35px rgba(248, 113, 113, 0.4);
+      transition: transform 0.12s ease, box-shadow 0.12s ease, opacity 0.12s ease;
+    }
+
+    button[type="submit"]:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 18px 45px rgba(248, 113, 113, 0.55);
+      opacity: 0.95;
+    }
+
+    .footer-note {
+      font-size: 0.78rem;
+      color: #9ca3af;
+      margin-top: 0.9rem;
     }
 
     footer {
@@ -106,272 +227,75 @@
     <div class="logo">BIPVIEW</div>
     <nav>
       <a href="index.html">Voltar para Início</a>
-      <a href="compliance.html">Compliance &amp; Exclusão de Dados</a>
+      <a href="policy.html">Política de Privacidade</a>
     </nav>
   </header>
 
   <main>
-    <h1>POLÍTICA DE PRIVACIDADE – BIPVIEW</h1>
-    <p class="updated">Última atualização: 30/11/2025</p>
-
-    <p>
-      A BIPVIEW (“BIPVIEW”, “nós”) leva sua privacidade a sério. Esta Política explica de forma transparente
-      como coletamos, usamos, compartilhamos e protegemos seus dados pessoais quando você utiliza nossos
-      aplicativos móveis, sites, APIs e demais serviços (conjuntamente, “Serviços”).
-    </p>
-    <p>
-      Ao criar uma conta, acessar ou usar os Serviços, você declara que leu, compreendeu e concorda com esta Política.
+    <h1>Compliance e Proteção de Dados</h1>
+    <p class="subtitle">
+      Estamos comprometidos com a proteção e privacidade dos seus dados pessoais.
     </p>
 
-    <h2>1. Quem somos (Controlador)</h2>
-    <p>
-      A BIPVIEW é operada por <strong>BIPVIEW SISTEMAS LTDA</strong>, inscrita no CNPJ sob nº
-      <strong>63.306.772/0001-76</strong>, sociedade empresária limitada, com sede em
-      Rua Monsenhor Emílio Lottermann, nº 40, Bairro Moinhos de Vento, Porto Alegre/RS, CEP 90560-050 (“Controladora”).
-    </p>
-    <p>
-      A BIPVIEW disponibiliza um canal de suporte por e-mail ao usuário, e esta Política direciona esse contato
-      para dúvidas, solicitações e exercício de direitos relacionados aos dados pessoais.
-    </p>
-    <p>
-      <strong>Contato de privacidade e suporte ao usuário:</strong><br>
-      E-mail: <strong>suporte@bipview.com.br</strong><br>
-      Endereço: Rua Monsenhor Emílio Lottermann, nº 40, Bairro Moinhos de Vento, Porto Alegre/RS, CEP 90560-050
-    </p>
+    <div class="cards">
+      <section class="card">
+        <h2>Seus Direitos</h2>
+        <ul>
+          <li>Acessar seus dados pessoais</li>
+          <li>Corrigir informações incorretas</li>
+          <li>Solicitar exclusão de dados</li>
+          <li>Portabilidade de dados</li>
+          <li>Revogar consentimento</li>
+        </ul>
+      </section>
 
-    <h2>2. Escopo</h2>
-    <p>Esta Política se aplica aos dados pessoais tratados pela BIPVIEW quando você:</p>
-    <ul>
-      <li>cria conta e configura seu perfil;</li>
-      <li>conecta corretoras/exchanges, carteiras ou integrações via API;</li>
-      <li>monta e acompanha portfólios;</li>
-      <li>usa gráficos, listas, alertas e relatórios;</li>
-      <li>interage com suporte, comunidade ou conteúdos;</li>
-      <li>navega em nossos sites e páginas oficiais.</li>
-    </ul>
+      <section class="card card-secondary">
+        <h2>Conformidade</h2>
+        <ul>
+          <li>LGPD – Lei Geral de Proteção de Dados</li>
+          <li>GDPR – Regulamento Geral de Proteção de Dados</li>
+          <li>Certificações de Segurança ISO 27001</li>
+          <li>Auditorias regulares de segurança</li>
+        </ul>
+      </section>
+    </div>
 
-    <h2>3. Dados que coletamos</h2>
-    <p>
-      Coletamos somente os dados necessários para prestação do serviço, melhoria contínua e segurança.
-      Os dados podem ser fornecidos diretamente por você, gerados pelo uso dos Serviços ou recebidos via integrações autorizadas.
-    </p>
+    <section class="delete-section">
+      <div class="delete-header">
+        <div class="delete-icon">🗑</div>
+        <h2>Solicitação de Exclusão de Dados</h2>
+      </div>
 
-    <h3>3.1 Dados fornecidos por você</h3>
-    <ul>
-      <li><strong>Dados de cadastro</strong>: nome, e-mail, senha (criptografada), país/idioma, foto (opcional).</li>
-      <li><strong>Preferências</strong>: ativos favoritos, watchlists, parâmetros de alertas, layout.</li>
-      <li><strong>Conteúdo do usuário</strong>: anotações, comentários, relatórios personalizados, arquivos/imports (quando aplicável).</li>
-      <li><strong>Comunicações</strong>: mensagens enviadas a suporte, feedbacks, respostas a pesquisas.</li>
-    </ul>
+      <p>
+        Se você deseja que todos os seus dados pessoais sejam removidos permanentemente de nossos sistemas,
+        preencha o formulário abaixo. Processaremos sua solicitação em até 30 dias úteis, conforme estabelecido
+        pela legislação vigente.
+      </p>
 
-    <h3>3.2 Dados coletados automaticamente</h3>
-    <ul>
-      <li><strong>Dados de uso</strong>: páginas/telas acessadas, cliques, tempo de sessão, eventos do app, erros.</li>
-      <li><strong>Dados do dispositivo</strong>: modelo, sistema operacional, versão do app, identificadores do dispositivo
-          (ex.: Android Advertising ID/AAID quando permitido), idioma, fuso horário, IP aproximado.</li>
-      <li><strong>Dados de diagnóstico</strong>: logs técnicos e relatórios de falha (crash reports).</li>
-    </ul>
+      <!-- Replace action with your real backend endpoint when available -->
+      <form id="delete-form" action="#" method="post">
+        <div>
+          <label for="email">Endereço de E-mail *</label>
+          <input id="email" name="email" type="email" required placeholder="seu@email.com">
+          <p class="hint">Informe o e-mail associado à sua conta BipView.</p>
+        </div>
 
-    <h3>3.3 Dados recebidos por integrações (com sua autorização)</h3>
-    <p>Quando você conecta exchanges, corretoras, wallets ou APIs suportadas, podemos tratar:</p>
-    <ul>
-      <li>Endereços públicos de carteira (quando você inserir/autorizar sincronização).</li>
-      <li>Saldos e posições.</li>
-      <li>Histórico de transações (compra, venda, depósito, saque, taxas).</li>
-      <li>Chaves de API e tokens de acesso somente com as permissões que você escolher.</li>
-    </ul>
-    <p>
-      <strong>Importante:</strong> a BIPVIEW não solicita nem armazena suas senhas de exchanges/corretoras.
-      Chaves de API são armazenadas de forma segura e, quando possível, com escopo mínimo e criptografia forte.
-    </p>
+        <div class="checkbox-row">
+          <input id="confirm" name="confirm" type="checkbox" required>
+          <label for="confirm">
+            Confirmo que desejo excluir <strong>permanentemente</strong> meus dados.<br>
+            Esta ação é irreversível. Todos os seus dados, incluindo histórico de portfólio e configurações,
+            serão permanentemente removidos.
+          </label>
+        </div>
 
-    <h3>3.4 Dados sensíveis</h3>
-    <p>
-      A BIPVIEW não tem como objetivo coletar dados sensíveis. Caso algum dado sensível seja tratado por necessidade
-      técnica, isso será informado de forma destacada no app, com consentimento específico quando exigido.
-    </p>
+        <button type="submit">Solicitar Exclusão de Dados</button>
 
-    <h2>4. Para que usamos seus dados (finalidades)</h2>
-    <p>Usamos seus dados para:</p>
-
-    <p><strong>1. Prestar os Serviços principais</strong></p>
-    <ul>
-      <li>criar e administrar sua conta;</li>
-      <li>exibir preços de criptoativos, gráficos e indicadores;</li>
-      <li>calcular desempenho, P&amp;L, alocação e risco;</li>
-      <li>gerar relatórios e insights de portfólio;</li>
-      <li>disparar alertas configurados por você.</li>
-    </ul>
-
-    <p><strong>2. Manter segurança e integridade</strong></p>
-    <ul>
-      <li>autenticação, prevenção de fraude, abuso e acessos não autorizados;</li>
-      <li>auditoria e investigação de incidentes.</li>
-    </ul>
-
-    <p><strong>3. Melhorar a plataforma</strong></p>
-    <ul>
-      <li>entender uso e performance;</li>
-      <li>corrigir bugs;</li>
-      <li>desenvolver novas funcionalidades.</li>
-    </ul>
-
-    <p><strong>4. Comunicação e suporte</strong></p>
-    <ul>
-      <li>atender solicitações;</li>
-      <li>enviar avisos operacionais (ex.: mudanças de API, manutenção, segurança).</li>
-    </ul>
-
-    <p><strong>5. Marketing e relacionamento (quando aplicável)</strong></p>
-    <ul>
-      <li>envio de novidades, conteúdos e ofertas, com opt-out fácil;</li>
-      <li>não usamos dados de portfólio para publicidade de terceiros.</li>
-    </ul>
-
-    <h2>5. Bases legais (LGPD)</h2>
-    <p>Tratamos dados com base em:</p>
-    <ul>
-      <li><strong>Execução de contrato</strong>: para operar conta, portfólio, relatórios e integrações.</li>
-      <li><strong>Legítimo interesse</strong>: melhoria do produto, segurança, métricas internas, prevenção a fraudes.</li>
-      <li><strong>Consentimento</strong>: quando você autoriza integrações específicas, notificações não essenciais
-          ou tratamentos não esperados.</li>
-      <li><strong>Cumprimento de obrigação legal/regulatória</strong>, quando aplicável.</li>
-    </ul>
-
-    <h2>6. Compartilhamento de dados</h2>
-    <p>Compartilhamos dados apenas quando necessário e nos limites desta Política:</p>
-
-    <h3>6.1 Prestadores de serviço / operadores</h3>
-    <p>Podemos compartilhar dados com empresas que nos ajudam a operar a BIPVIEW, como:</p>
-    <ul>
-      <li>infraestrutura cloud/hosting;</li>
-      <li>analytics e métricas;</li>
-      <li>crash/monitoramento de erros;</li>
-      <li>notificações push/e-mail;</li>
-      <li>processadores de pagamento/assinatura.</li>
-    </ul>
-    <p>
-      Esses terceiros atuam como operadores, seguindo nossas instruções e medidas de segurança compatíveis
-      com esta Política.
-    </p>
-
-    <h3>6.2 Integrações escolhidas por você</h3>
-    <p>
-      Ao conectar uma exchange/corretora/wallet, você autoriza o tráfego de dados entre a BIPVIEW e o provedor
-      escolhido, nos limites das permissões concedidas.
-    </p>
-
-    <h3>6.3 Requisições legais</h3>
-    <p>
-      Podemos divulgar dados para cumprir lei, ordem judicial ou regulatória, ou para proteger direitos da BIPVIEW,
-      usuários e terceiros.
-    </p>
-
-    <h3>6.4 Não vendemos dados</h3>
-    <p>
-      A BIPVIEW não vende nem aluga dados pessoais ou dados de portfólio.
-    </p>
-
-    <h2>7. Transferência internacional</h2> 
-    <p>
-      Nossos servidores e fornecedores podem estar localizados fora do Brasil. Nesses casos, adotamos mecanismos
-      legais e contratuais para proteção adequada.
-    </p>
-
-    <h2>8. Retenção e descarte</h2>
-    <p>Guardamos dados pelo tempo necessário para:</p>
-    <ul>
-      <li>prestação dos Serviços;</li>
-      <li>cumprimento legal/regulatório;</li>
-      <li>prevenção de fraude;</li>
-      <li>exercício regular de direitos.</li>
-    </ul>
-    <p>Em regra:</p>
-    <ul>
-      <li><strong>dados de conta e portfólio</strong>: enquanto sua conta estiver ativa;</li>
-      <li><strong>logs técnicos/diagnósticos</strong>: por períodos limitados, conforme necessidade de segurança e estabilidade;</li>
-      <li><strong>backups</strong>: por prazos adicionais, em ambiente seguro.</li>
-    </ul>
-    <p>
-      Você pode solicitar exclusão a qualquer momento (ver Seção 10).
-    </p>
-
-    <h2>9. Segurança da informação</h2>
-    <p>
-      Adotamos medidas técnicas e organizacionais para proteger seus dados, incluindo:
-    </p>
-    <ul>
-      <li>criptografia em trânsito (TLS/HTTPS) e, quando aplicável, em repouso;</li>
-      <li>controle de acesso por menor privilégio;</li>
-      <li>monitoramento de anomalias;</li>
-      <li>segregação de ambientes;</li>
-      <li>rotinas de backup e recuperação;</li>
-      <li>políticas internas de segurança e treinamento.</li>
-    </ul>
-    <p>
-      Nenhum sistema é 100% imune, mas atuamos de forma diligente para reduzir riscos.
-    </p>
-
-    <h2>10. Seus direitos</h2>
-    <p>Você tem os direitos previstos pela LGPD, incluindo:</p>
-    <ul>
-      <li>confirmação e acesso aos dados;</li>
-      <li>correção;</li>
-      <li>anonimização/bloqueio/eliminação;</li>
-      <li>portabilidade, quando aplicável;</li>
-      <li>informação sobre compartilhamentos;</li>
-      <li>revogação de consentimento;</li>
-      <li>oposição ao tratamento em casos de legítimo interesse.</li>
-    </ul>
-
-    <h3>10.1 Como exercer</h3>
-    <p>Você pode:</p>
-    <ul>
-      <li>usar as opções do app em <strong>Configurações → Conta → Privacidade</strong>; e/ou</li>
-      <li>enviar e-mail para <strong>suporte@bipview.com.br</strong>.</li>
-    </ul>
-
-    <h3>10.2 Exclusão de conta</h3>
-    <p>
-      A exclusão pode ser solicitada dentro do app. Após confirmar, seus dados serão eliminados ou anonimizados,
-      ressalvadas retenções legais.
-    </p>
-
-    <h2>11. Permissões Android, Data Safety e avisos destacados</h2>
-    <p>
-      A BIPVIEW solicita apenas permissões coerentes com suas funções (ex.: internet, notificações).
-    </p>
-    <p>
-      Qualquer acesso que não seja esperado de forma razoável (ex.: coleta em background, uso de identificadores
-      de publicidade, integração com terceiros) será informado com aviso destacado no app e consentimento prévio.
-    </p>
-    <p>
-      A presente Política reflete o que é declarado na seção “Data safety” do Google Play.
-    </p>
-
-    <h2>12. Crianças e adolescentes</h2>
-    <p>
-      Os Serviços não são direcionados a menores de 18 anos. Não coletamos intencionalmente dados de crianças.
-      Se identificarmos esse tratamento, removeremos os dados.
-    </p>
-
-    <h2>13. Alterações desta Política</h2>
-    <p>
-      Podemos atualizar esta Política para refletir evoluções do produto ou exigências legais.
-      Quando houver mudança relevante, avisaremos no app e/ou por e-mail. A nova versão entra em vigor na data
-      indicada no topo.
-    </p>
-
-    <h2>14. Contato</h2>
-    <p>
-      A BIPVIEW mantém canal de suporte por e-mail, e este é o meio indicado para dúvidas, solicitações ou exercício
-      de direitos relacionados aos seus dados pessoais.
-    </p>
-    <p>
-      <strong>BIPVIEW SISTEMAS LTDA – CNPJ 63.306.772/0001-76</strong><br>
-      E-mail: <strong>suporte@bipview.com.br</strong><br>
-      Endereço: Rua Monsenhor Emílio Lottermann, nº 40, Bairro Moinhos de Vento, Porto Alegre/RS, CEP 90560-050
-    </p>
+        <p class="footer-note">
+          Após o envio, você receberá um e-mail de confirmação. A exclusão será processada em até 30 dias úteis.
+        </p>
+      </form>
+    </section>
   </main>
 
   <footer>
@@ -380,6 +304,27 @@
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    const form = document.getElementById("delete-form");
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      const email = document.getElementById("email").value.trim();
+
+      alert(
+        "Sua solicitação de exclusão de dados para o e-mail " + email +
+        " foi registrada.\n\n" +
+        "Os dados serão analisados e, se elegíveis, excluídos de acordo com a Política de Privacidade. " +
+        "Você receberá um e-mail de confirmação quando o processo for concluído (prazo de até 30 dias úteis)."
+      );
+
+      // Here you would normally send the form to the server (fetch/XHR) if needed.
+    });
   </script>
 </body>
 </html>
